@@ -26,6 +26,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { BadgeModule } from 'primeng/badge';
 import { DividerModule } from 'primeng/divider';
 import { ListboxModule } from 'primeng/listbox';
+import { CardModule } from 'primeng/card';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 const MODULES = [
   CommonModule,
@@ -56,6 +58,8 @@ const MODULES = [
   BadgeModule,
   DividerModule,
   ListboxModule,
+  CardModule,
+  RadioButtonModule,
 ];
 
 @NgModule({

@@ -1,1 +1,145 @@
-<p>gestion-aplicaciones works!</p>
+<div class="d-block pl-4 pr-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="title">{{ title }}</h4>
+    <p-button
+      label="Gestión"
+      icon="pi pi-plus"
+      styleClass="p-button-rounded p-button-sm p-button-accent"
+    ></p-button>
+  </div>
+  <div class="d-flex justify-content-center align-items-center mb-4">
+    <label class="m-0 mr-4"><strong>Ingresar Nombre</strong></label>
+    <span class="p-input-icon-right mr-4">
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText />
+    </span>
+    <div class="d-flex align-items-center ml-4 mr-4">
+      <p-checkbox
+        [(ngModel)]="checkedIntranet"
+        [binary]="true"
+        inputId="binary"
+        class="mr-2"
+      ></p-checkbox>
+      <label for="pagina" class="m-0">Ver Intranet</label>
+    </div>
+    <button pButton pRipple type="button" label="Buscar" class="ml-4"></button>
+  </div>
+  <div class="d-flex justify-content-center mb-4">
+    <p-table
+      class="w-75"
+      [value]="this.menu"
+      responsiveLayout="scroll"
+      styleClass="p-datatable-sm p-datatable-gridlines"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th class="text-center">Orden</th>
+          <th class="text-center">Nombre</th>
+          <th class="text-center">Estado</th>
+          <th class="text-center">Opciones</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td class="text-center">{{ product.orden }}</td>
+          <td class="text-center">{{ product.nombre }}</td>
+          <td class="text-center">
+            <p-chip
+              [label]="product.estado"
+              [styleClass]="
+                product.estado == 'Activo'
+                  ? 'mr-2 custom-chip text-white bg-success'
+                  : 'mr-2 custom-chip text-white bg-danger'
+              "
+            ></p-chip>
+          </td>
+          <td class="text-center">
+            <button
+              pButton
+              pRipple
+              type="button"
+              icon="pi pi-pencil"
+              class="p-button-rounded p-button-success p-button-text mr-2"
+            ></button>
+            <button
+              pButton
+              pRipple
+              type="button"
+              icon="pi pi-eye"
+              class="p-button-rounded p-button-warning p-button-text mr-2"
+            ></button>
+            <button
+              pButton
+              pRipple
+              type="button"
+              icon="pi pi-trash"
+              class="p-button-rounded p-button-danger p-button-text"
+            ></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <div class="d-flex justify-content-center mt-4 w-100">
+    <p-card
+      class="w-75"
+      [style]="{
+        background: 'var(--light-gray)'
+      }"
+    >
+      <ng-template pTemplate="header">
+        <div class="d-flex pt-4 pr-4 pl-4 pb-2">
+          <span class="m-0 mr-4"><strong>Crear Nueva Aplicación</strong></span>
+        </div>
+      </ng-template>
+      <div class="row">
+        <div class="col-6 row">
+          <div class="col-4 d-flex align-items-center mb-2">
+            <label for="pagina" class="m-0">Nombre</label>
+          </div>
+          <div class="col-8 d-flex align-items-center mb-2">
+            <input type="text" pInputText />
+          </div>
+          <div class="col-4 d-flex align-items-center">
+            <label for="pagina" class="m-0">URL</label>
+          </div>
+          <div class="col-8 d-flex align-items-center">
+            <input type="text" pInputText />
+          </div>
+        </div>
+        <div class="col-6 row">
+          <div class="col-12">
+            <label class="m-0">Icono</label>
+          </div>
+          <div class="col-12 d-flex justify-content-center">
+            <p-fileUpload
+              mode="basic"
+              name="myfile"
+              chooseLabel="Subir Archivo"
+            ></p-fileUpload>
+          </div>
+        </div>
+        <div class="col-12 d-flex justify-content-between mt-4">
+          <div class="d-flex">
+            <div
+              class="d-flex align-items-center mr-4"
+              *ngFor="let item of checkedModel"
+            >
+              <p-checkbox
+                [(ngModel)]="item.checked"
+                [binary]="true"
+                inputId="binary"
+                class="mr-2"
+              ></p-checkbox>
+              <label for="enlace" class="m-0">{{ item.label }}</label>
+            </div>
+          </div>
+          <p-button
+            label="Guardar"
+            styleClass="p-button-rounded p-button-sm p-button-accent"
+          ></p-button>
+        </div>
+      </div>
+    </p-card>
+  </div>
+</div>
