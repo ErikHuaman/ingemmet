@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuModel } from 'src/app/core/models';
+import { AplicacionModel } from 'src/app/core/models';
 
 @Component({
   selector: 'app-gestion-aplicaciones',
@@ -9,15 +9,15 @@ import { MenuModel } from 'src/app/core/models';
 export class GestionAplicacionesComponent implements OnInit {
   title = 'Gestión de Aplicaciones';
 
-  menu: MenuModel[] = [
+  menu: AplicacionModel[] = [
     {
       orden: 2,
-      nombre: 'Gestión de Roles',
+      nombre: 'Requerimiento de Software',
       estado: 'Activo',
     },
     {
       orden: 9,
-      nombre: 'Gestión de Temas',
+      nombre: 'Lucha contra la corrupción',
       estado: 'Inactivo',
     },
   ];

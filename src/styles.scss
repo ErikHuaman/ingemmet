@@ -12,6 +12,7 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: "Roboto", "Archivo", sans-serif;
+  // font-size: 0.85rem;
 }
 
 .p-button,
@@ -20,10 +21,24 @@ body {
   color: #fff;
 }
 
+.p-button {
+  padding: 0.25rem 1rem;
+  font-size: 0.95rem;
+}
+
+.p-card-content {
+  padding: 0.5rem 0 !important;
+}
+
 .p-button-accent {
   background-color: var(--secondary);
   color: #fff;
   border: none;
+}
+
+.p-inputtext {
+  padding: 0.25rem 0.25rem;
+  font-size: 0.95rem;
 }
 
 .p-divider.p-divider-horizontal {
