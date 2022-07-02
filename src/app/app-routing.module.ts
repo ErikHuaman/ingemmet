@@ -39,6 +39,7 @@ const routes: Routes = [
     component: GestionDirectorioTelefonicoComponent,
   },
   { path: 'gestion-cumpleanios', component: GestionCumpleaniosComponent },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({

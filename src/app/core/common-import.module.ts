@@ -28,6 +28,7 @@ import { DividerModule } from 'primeng/divider';
 import { ListboxModule } from 'primeng/listbox';
 import { CardModule } from 'primeng/card';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { TabViewModule } from 'primeng/tabview';
 
 const MODULES = [
   CommonModule,
@@ -60,6 +61,7 @@ const MODULES = [
   ListboxModule,
   CardModule,
   RadioButtonModule,
+  TabViewModule,
 ];
 
 @NgModule({

@@ -1,1 +1,68 @@
-<p>publicacion works!</p>
+<div class="d-block pl-4 pr-4">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h4 class="title">{{ title }}</h4>
+    <p-button
+      label="Nuevo"
+      icon="pi pi-plus"
+      styleClass="p-button-rounded p-button-sm p-button-accent"
+    ></p-button>
+  </div>
+  <div class="d-flex align-items-center mb-4">
+    <div class="card" style="width: 90%">
+      <p-tabView>
+        <p-tabPanel>
+          <ng-template pTemplate="header">Borrador (3)</ng-template>
+          <p-table
+            class="w-75"
+            [value]="this.publicaciones"
+            responsiveLayout="scroll"
+            styleClass="p-datatable-sm p-datatable-gridlines"
+          >
+            <ng-template pTemplate="body" let-item>
+              <tr>
+                <td>
+                  <div
+                    class="d-flex justify-content-between align-items-center w-100"
+                  >
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <img [src]="item.portada" alt="" />
+                      <div class="d-block ml-4">
+                        <h4>{{ item.titulo }}</h4>
+                        <div>{{ item.descripcion }}</div>
+                        <div>Creado {{ item.creacion }}</div>
+                      </div>
+                    </div>
+                    <div class="p-4">
+                      <i
+                        class="pi pi-pencil mr-2"
+                        [ngStyle]="{ color: 'var(--green-500)' }"
+                      ></i>
+                      <i
+                        class="pi pi-trash ml-2"
+                        [ngStyle]="{ color: 'var(--red-500)' }"
+                      ></i>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </p-tabPanel>
+        <p-tabPanel>
+          <ng-template pTemplate="header">Publicado</ng-template>
+          <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+            eos qui ratione voluptatem sequi nesciunt. Consectetur, adipisci
+            velit, sed quia non numquam eius modi.
+          </p>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+  </div>
+</div>
